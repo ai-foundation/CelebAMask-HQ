@@ -1,0 +1,13 @@
+name: face_parsing
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python>3.6,<3.7
+  - opencv=4.5.2
+  - pytorch=0.4.1
+  - pip=21.1.3 
+  - torchvision=0.2.1
+  - pip:
+      - tensorboardX==2.4
