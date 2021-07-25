@@ -39,7 +39,8 @@ RUN conda env create -f environment.yml
 RUN --mount=type=secret,id=aws_creds mkdir -p models/parsenet && \
     mkdir -p /root/.aws && \
     cat /run/secrets/aws_creds > /root/.aws/credentials && \
-    aws s3 cp s3://aif-dev-deeptwin-pipeline/models/thirdparty/CelebAMask-HQ/face_parsing/model.pth models/parsenet
+    aws s3 cp s3://aif-dev-deeptwin-pipeline/models/thirdparty/CelebAMask-HQ/face_parsing/model.pth models/parsenet && \
+    rm /root/.aws/credentials
     
 COPY *.py ./
 COPY Data_preprocessing ./
